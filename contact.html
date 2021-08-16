@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Petrona:wght@500;700;800;900&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="shortcut icon" href="assets/images/pinkCat.svg" type="image/x-icon" />
+    <title>Amin Contact</title>
+  </head>
+  <body>
+    <header>
+      <div class="navcontainer">
+        <div class="logo">
+          <a href="index.html">
+            <img src="assets/images/pinkCat.svg" alt="logo tete du chat foncé fait dans le cours de médias" />
+          </a>
+        </div>
+        <nav class="regular">
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="about.html">À propos</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="form-container">
+        <h1>Faites entendre votre voix</h1>
+        <form action="">
+          <label for="nom">Nom</label>
+          <input type="text" id="nom" />
+          <label for="prénom">Prénom</label>
+          <input type="text" id="prénom" />
+          <label for="organisation">Organisation</label>
+          <input type="text" id="organisation" />
+          <label for="courriel">Courriel</label>
+          <input type="email" id="courriel" />
+          <label for="raison">Raison</label>
+          <select name="raison" id="raison">
+            <option value="">Séléctionnez une option</option>
+            <option value="option1">option1</option>
+            <option value="option2">option2</option>
+            <option value="option3">option3</option>
+            <option value="option4">option4</option>
+          </select>
+          <label for="message">Message</label>
+          <textarea name="message" id="message" cols="30" rows="5"></textarea>
+          <label for="canal">Comment avez-vous entendu parler de nos services ?</label>
+          <select name="canal" id="canal" required>
+            <option value="">Séléctionnez une option</option>
+            <option value="option1">option1</option>
+            <option value="option2">option2</option>
+            <option value="option3">option3</option>
+          </select>
+          <input class="button" type="submit" value="Envoyer" />
+        </form>
+      </div>
+    </main>
+    <footer>
+      <div class="content space-btw">
+        <div class="main">
+          <p>Aura un jour une compagnie avec un chiffre à mettre ici.</p>
+        </div>
+        <div class="second">
+          <p>
+            &copy; Mohamed Amine Zaalani 2021. inspiré de
+            <a href="http://youknowwho.com/">youknowwho.com</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

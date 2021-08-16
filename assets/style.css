@@ -1,0 +1,564 @@
+/*inspiration : http://youknowwho.com/ lien présent dans footer 
+*/
+:root {
+  --background-pink: rgb(253, 240, 240);
+  --background-pink-drk: rgb(255, 188, 188);
+  --background-white: white;
+  --bg-txt-dark: rgb(51, 51, 51);
+  --txt-alt-hover: rgb(143, 143, 143);
+
+  /* police pour la navigation et articles du contenu */
+  --font-f-nav-main: "Libre Caslon Text", serif;
+  /* police gros titres */
+  --font-f-title: "Petrona", serif;
+  /* police contenu secondaire */
+  --font-f-second: "Roboto", sans-serif;
+
+  /*pour assurer un alignement du contenu uniforme et maintenir la forme correspondante a celle de l'inspiration surtout
+  pendant le changement de la taille de la fenêtre*/
+  --width-percent: 75%;
+}
+
+/*#region: rythme de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html {
+  font-size: 1.35rem;
+}
+
+body {
+  background-color: var(--background-pink);
+  font-family: var(--font-f-nav-main);
+  font-weight: 400;
+  color: var(--bg-txt-dark);
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-family: var(--font-f-title);
+  font-weight: 900;
+  font-size: 3rem;
+  line-height: 4rem;
+}
+
+h2 {
+  font-family: var(--font-f-second);
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+a {
+  color: var(--txt-alt-hover);
+}
+
+a:hover,
+a:focus {
+  color: var(--background-pink-drk);
+  cursor: pointer;
+}
+
+.regular {
+  font-family: var(--font-f-nav-main);
+  font-weight: 400;
+}
+
+.big-title {
+  font-family: var(--font-f-title);
+  font-weight: 700;
+}
+
+.second {
+  font-family: var(--font-f-second);
+  font-weight: 700;
+}
+/*#endregion : rythme de base */
+
+/*#region: navigation */
+.logo {
+  width: 150px;
+  display: inline-block;
+  transition: opacity 0.3s;
+}
+
+.logo a {
+  display: block;
+}
+
+.logo:hover,
+.logo:focus {
+  opacity: 0.5;
+  transition: 0.3s ease-in;
+}
+
+header {
+  background-color: var(--bg-txt-dark);
+  position: relative;
+  transform-origin: top;
+  animation: goIn 0.6s;
+}
+
+.navcontainer {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+}
+
+.navcontainer nav {
+  flex-grow: 1;
+  transform: translateX(-75px);
+}
+
+.navcontainer nav ul {
+  display: flex;
+  justify-content: center;
+}
+
+.navcontainer nav ul > * + * {
+  margin-left: 2rem;
+}
+
+.navcontainer nav ul li {
+  list-style: none;
+}
+
+.navcontainer nav ul li a {
+  color: var(--background-white);
+  transition: linear 0.2s;
+}
+
+.navcontainer nav ul li a:hover,
+.navcontainer nav ul li a:focus {
+  color: var(--txt-alt-hover);
+  transition: linear 0.2s;
+  cursor: pointer;
+}
+
+/*pointage de la page active*/
+.navcontainer nav .current {
+  color: var(--background-pink-drk);
+}
+
+@keyframes goIn {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+/*#endregion : navigation */
+
+/*#region : contenu */
+
+/* section 1 */
+.flex-container {
+  width: var(--width-percent);
+  margin: auto;
+}
+
+.main-content {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content > * {
+  margin-top: 3.5rem;
+}
+
+.big-title {
+  line-height: 3rem;
+  padding-right: 15%;
+}
+
+.content {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.space-btw {
+  justify-content: space-between;
+}
+
+.content > * {
+  line-height: 2rem;
+}
+
+.paragrpah {
+  max-width: 30rem;
+  flex-grow: 1;
+}
+
+.paragrpah > * + * {
+  margin-top: 1rem;
+}
+
+.second ul {
+  padding-left: 2rem;
+}
+
+.second span {
+  font-family: var(--font-f-nav-main);
+  font-size: 0.7rem;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.divider {
+  border: none;
+  height: 2px;
+  background: var(--background-white);
+  margin: 3.5rem 0 5rem;
+}
+
+.invis-divider {
+  height: 3rem;
+}
+
+/* section 2 */
+.grid-container {
+  width: var(--width-percent);
+  margin: auto;
+}
+
+.testimonial {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  margin: -2rem 0 -2rem -2rem;
+  justify-content: center;
+}
+
+.testimonial > * {
+  margin: 2rem 0 2rem 2rem;
+  flex-basis: calc(100% / 3 - 2rem);
+  line-height: 1.5rem;
+  min-width: 8rem;
+}
+
+.testimonial h2 {
+  margin-bottom: 1rem;
+}
+
+.testimonial p {
+  transition: transform 1s ease-in-out;
+}
+
+/* requis pour le TP: 6. Des effets d’interaction sur la navigation et sur un autre élément de votre choix*/
+.testimonial h2:hover ~ p {
+  transform: translateY(-0.6rem);
+  transition: 1s ease-in-out;
+}
+
+/* section 3 */
+.container-image {
+  background-image: url(../assets/images/1.jpeg);
+  background-size: cover;
+  margin-top: 5rem;
+}
+
+.content-container {
+  width: var(--width-percent);
+  margin: auto;
+  padding: 5rem 0;
+  position: relative;
+}
+
+.image-content {
+  max-width: 40rem;
+  margin: 0 0 0 auto;
+}
+
+.image-content h1 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  margin-bottom: 3rem;
+  font-family: var(--font-f-title);
+}
+
+/* modification pour passer la norme de contrast */
+.image-content h1 a:hover,
+.image-content h1 a:hover {
+  color: maroon;
+}
+/* modification pour passer la norme de contrast */
+.image-content h1 a {
+  color: purple;
+}
+
+.image-content p {
+  font-style: italic;
+}
+
+/*section 4 contact*/
+
+.contact-section {
+  background-color: var(--background-white);
+  padding: 3rem 0;
+}
+
+.contact-section > div {
+  padding: 2em;
+  text-align: center;
+}
+
+.contact-section h2 {
+  margin-bottom: 2rem;
+}
+
+.contact-section p {
+  margin-bottom: 2rem;
+}
+
+.button {
+  font-family: var(--font-f-second);
+  font-weight: 700;
+  color: var(--bg-txt-dark);
+  background-color: var(--background-pink);
+  border: 1px dotted var(--bg-txt-dark);
+  border-radius: 3px;
+  padding: 0.8rem 3.5rem;
+  transition: 0.2s linear;
+}
+
+.button:hover,
+.button:focus {
+  color: var(--background-white);
+  background-color: var(--bg-txt-dark);
+}
+
+/* portfolio */
+.portfolio-container {
+  margin: 5rem auto 2rem auto;
+  text-align: center;
+}
+
+.portfolio-h {
+  margin-left: -1.7rem;
+  justify-content: center;
+}
+
+.portfolio-h > div {
+  margin-left: 1.7rem;
+}
+
+.portfolio-v > * + * {
+  margin-top: 1rem;
+}
+
+/* effet de survole et lien images du portfolio */
+.box {
+  position: relative;
+}
+
+.box .details {
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0.7rem;
+  background-color: rgba(42, 42, 42, 0.8);
+  color: var(--background-white);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.box .details:hover,
+.box .details:focus {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.box .details .details-content {
+  position: absolute;
+  text-align: center;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* formulaire */
+.form-container {
+  margin: auto;
+  text-align: center;
+}
+
+.form-container h1 {
+  margin-top: 5rem;
+}
+
+.form-container form {
+  width: 50%;
+  margin: 3rem auto;
+  color: var(--bg-txt-dark);
+  font-family: var(--font-f-title);
+}
+
+.form-container form * {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--background-pink-drk);
+  font-size: 1rem;
+}
+
+.form-container form label {
+  border: none;
+}
+
+.form-container form .button:hover,
+.form-container form .button:focus {
+  cursor: pointer;
+}
+
+.form-container form * + * {
+  margin: 0.2rem 0 1.5rem 0;
+}
+
+.video-container {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.video-container video {
+  max-width: 100%;
+}
+
+.video-container h1 {
+  margin-bottom: 3rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*#endregion : content */
+
+/*#region: footer */
+footer {
+  background-color: var(--bg-txt-dark);
+  color: var(--background-white);
+}
+
+footer > div {
+  width: var(--width-percent);
+  margin: 1rem auto;
+  font-size: 0.8rem;
+}
+
+/* modification pour passer la norme de contrast */
+footer a {
+  color: pink;
+}
+/* modification pour passer la norme de contrast */
+footer a:hover,
+footer a:focus {
+  color: greenyellow;
+}
+/*#endregion */
+
+/*#region adaptation petites résolution */
+/*premiére rupture*/
+@media (max-width: 756px) {
+  h1 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  p {
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+  }
+
+  .navcontainer {
+    flex-direction: column;
+  }
+
+  .navcontainer nav {
+    transform: translateX(0px);
+    margin-top: 10px;
+  }
+
+  .navcontainer nav ul > * + * {
+    margin-left: 1rem;
+  }
+
+  aside ul li {
+    font-size: 0.8rem;
+  }
+
+  .content {
+    margin-top: 1.5rem;
+  }
+
+  .divider {
+    margin: 2rem 0;
+  }
+
+  .image-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .image-content p {
+    font-size: 0.8rem;
+  }
+
+  footer div {
+    text-align: center;
+  }
+
+  .form-container form {
+    width: 75%;
+  }
+
+  .box .img-box img {
+    width: 90%;
+  }
+
+  .box .details {
+    width: 90%;
+    transform: translateX(6%);
+  }
+
+  .invis-divider {
+    height: 1rem;
+    margin-top: 1rem;
+  }
+}
+/*2éme rupture*/
+@media (max-width: 400px) {
+  .navcontainer nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navcontainer nav ul > * + * {
+    margin-left: 0;
+    margin-top: 0.3rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .form-container form {
+    width: 90%;
+  }
+
+  .box .details .details-content {
+    top: 0;
+    font-size: 0.7rem;
+  }
+
+  .portfolio-container {
+    margin-top: 3rem;
+  }
+}
+
+/*#endregion */
